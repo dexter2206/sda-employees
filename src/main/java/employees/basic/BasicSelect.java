@@ -7,7 +7,7 @@ public class BasicSelect {
     static final String query = "SELECT first_name, last_name FROM employees LIMIT 10";
     public static void main(String[] args) throws SQLException {
         Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost/employees",
+                "jdbc:mysql://localhost/employees?serverTimezone=UTC",
                 "sda",
                 "JavaKat_9");
         Statement stmt = conn.createStatement();
