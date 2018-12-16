@@ -42,7 +42,9 @@ public class BasicTransaction {
         } catch(SQLException e) {
             e.printStackTrace();
             if ( conn != null) {
-                conn.rollback();
+                try {
+                    conn.rollback();
+                } catch(SQLException e2) { }
             }
         } finally {
             if (addSalaryStmt != null) {
